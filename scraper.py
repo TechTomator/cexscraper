@@ -2,14 +2,27 @@
 # including some code snippets below that you should find helpful
 
 import scraperwiki
-import lxml.html
+#import lxml.html
+from lxml import html
 #
 
 
 # # Read in a page
-html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpci")
-#
+
+product_id = "sssdtosxg51tbpci"
+product_name = "Toshiba XG5"
+
+cexurl = "https://uk.webuy.com/product-detail/?id="
+
+#html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpci")
+
+url = "https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpc"
+doc_text = scraperwiki.scrape(url)
+doc = html.fromstring(doc_text)
+
 # # Find something on the page using css selectors
+
+
 root = lxml.html.fromstring(html)
 root.cssselect("<span style="line-height: 17px !important; margin: 1px 1px 3px;")
 #
