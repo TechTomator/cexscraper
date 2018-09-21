@@ -20,21 +20,34 @@ html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx")
 
 
 root = lxml.html.fromstring(html)
-root.cssselect(" ")
+root.cssselect("div[align='left']")
 #
 # # Write out to the sqlite database using scraperwiki library
 
-#scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 
-url = "http://www-news.iaea.org/EventList.aspx"
-doc_text = scraperwiki.scrape(url)
-doc = html.fromstring(doc_text)
+#url = "http://www-news.iaea.org/EventList.aspx"
+#doc_text = scraperwiki.scrape(url)
+#doc = html.fromstring(doc_text)
                
-for row in doc.cssselect("#tblEvents tr"):
-    link_in_header = row.cssselect("h4 a").pop()
-    event_title = link_in_header.text
-    print event_title               
+#for row in doc.cssselect("#tblEvents tr"):
+#    link_in_header = row.cssselect("h4 a").pop()
+#    event_title = link_in_header.text
+#    print event_title               
                
+# import scraperwiki
+# import lxml.html
+#
+# # Read in a page
+# html = scraperwiki.scrape("http://foo.com")
+#
+# # Find something on the page using css selectors
+# root = lxml.html.fromstring(html)
+# root.cssselect("div[align='left']")
+#
+# # Write out to the sqlite database using scraperwiki library
+# scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+#
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
 
