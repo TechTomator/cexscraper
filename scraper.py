@@ -16,20 +16,26 @@ cexurl = "https://uk.webuy.com/product-detail/?id="
 
 #html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpci")
 
-url = "https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpc"
-doc_text = scraperwiki.scrape(url)
-doc = html.fromstring(doc_text)
+#url = "https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpc"
+#doc_text = scraperwiki.scrape(url)
+#doc = html.fromstring(doc_text)
 
 # # Find something on the page using css selectors
 
 
-root = lxml.html.fromstring(html)
-root.cssselect("<span style="line-height: 17px !important; margin: 1px 1px 3px;")
+#root = lxml.html.fromstring(html)
+#root.cssselect("<span style="line-height: 17px !important; margin: 1px 1px 3px;")
 #
 # # Write out to the sqlite database using scraperwiki library
 
-scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
-#
+#scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+
+url = "http://www-news.iaea.org/EventList.aspx"
+doc_text = scraperwiki.scrape(url)
+doc = html.fromstring(doc_text)
+               
+               
+               
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
 
