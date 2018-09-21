@@ -14,27 +14,42 @@ product_name = "Toshiba XG5"
 cexurl = "https://uk.webuy.com/product-detail/?id="
 
 #html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpci")
-html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx")
+html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx")   # this is same as TWO doc_text = scraperwiki.scrape(url)
 
 # # Find something on the page using css selectors
 
 
-root = lxml.html.fromstring(html)
-root.cssselect("div[align='left']")
-#
+root = lxml.html.fromstring(html)   # this is same as THREE doc = html.fromstring(doc_text)
+#root.cssselect("div[align='left']")  # similar to FOUR for row in doc.cssselect("#tblEvents tr"):
+
+for row in root.cssselect("#tblEvents"):
+    link_in_header = row.cssselect("h4 a").pop()
+    event_title = link_in_header.text
+    print event_title 
+    
+
 # # Write out to the sqlite database using scraperwiki library
 
-scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+#scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 
 #url = "http://www-news.iaea.org/EventList.aspx"
-#doc_text = scraperwiki.scrape(url)
-#doc = html.fromstring(doc_text)
+# TWO    doc_text = scraperwiki.scrape(url)
+# THREE doc = html.fromstring(doc_text)
                
-#for row in doc.cssselect("#tblEvents tr"):
+# FOUR for row in doc.cssselect("#tblEvents tr"):
 #    link_in_header = row.cssselect("h4 a").pop()
 #    event_title = link_in_header.text
 #    print event_title               
-               
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 # import scraperwiki
 # import lxml.html
 #
