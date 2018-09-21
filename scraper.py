@@ -11,7 +11,7 @@ html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tb
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-root.cssselect("<span style="line-height: 17px !important; margin: 1px 1px 3px;">I want to buy this item</span>")
+root.cssselect("<span style="line-height: 17px !important; margin: 1px 1px 3px;")
 #
 # # Write out to the sqlite database using scraperwiki library
 
