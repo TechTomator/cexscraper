@@ -2,8 +2,7 @@
 # including some code snippets below that you should find helpful
 
 import scraperwiki
-#import lxml.html
-from lxml import html
+import lxml.html
 #
 
 
@@ -15,16 +14,13 @@ product_name = "Toshiba XG5"
 cexurl = "https://uk.webuy.com/product-detail/?id="
 
 #html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpci")
-
-#url = "https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpc"
-#doc_text = scraperwiki.scrape(url)
-#doc = html.fromstring(doc_text)
+html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx")
 
 # # Find something on the page using css selectors
 
 
-#root = lxml.html.fromstring(html)
-#root.cssselect("<span style="line-height: 17px !important; margin: 1px 1px 3px;")
+root = lxml.html.fromstring(html)
+root.cssselect(" ")
 #
 # # Write out to the sqlite database using scraperwiki library
 
