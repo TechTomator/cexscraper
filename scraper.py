@@ -14,8 +14,7 @@ product_name = "Toshiba XG5"
 cexurl = "https://uk.webuy.com/product-detail/?id="
 
 #html = scraperwiki.scrape("https://uk.webuy.com/product-detail/?id=sssdtosxg51tbpci")
-html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx")   # this is same as TWO doc_text = scraperwiki.scrape(url)
-
+html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx") 
 # # Find something on the page using css selectors
 
 
