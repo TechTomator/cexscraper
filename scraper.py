@@ -20,7 +20,6 @@ html = scraperwiki.scrape("http://www-news.iaea.org/EventList.aspx")   # this is
 
 
 root = lxml.html.fromstring(html)   # this is same as THREE doc = html.fromstring(doc_text)
-#root.cssselect("div[align='left']")  # similar to FOUR for row in doc.cssselect("#tblEvents tr"):
 
 for row in root.cssselect("#tblEvents"):
     link_in_header = row.cssselect("h4 a").pop()
